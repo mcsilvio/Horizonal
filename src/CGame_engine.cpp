@@ -14,6 +14,7 @@
 using namespace constants;
 
 
+
 namespace constants{
 //screen attributes
 const int SCREEN_WIDTH = TILE_WIDTH * LEVEL_LENGTH;
@@ -92,7 +93,26 @@ bool CGame_engine::load_game()
 
 void CGame_engine::handle_events()
 {
-	//While there's an event to handle
+	//continuous keys
+	Uint8* keystate = SDL_GetKeyState(NULL);
+
+	    //continuous-response keys
+	    if(keystate[SDLK_LEFT])
+	    {
+			m_game_data.knight->move_left();
+	    }
+	    else if(keystate[SDLK_RIGHT])
+	    {
+			m_game_data.knight->move_right();
+	    }
+	    else
+	    {
+	    	m_game_data.knight->stop();
+	    }
+
+
+
+	//single press keys
 		while (SDL_PollEvent(&m_event))
 		{
 			//If the user has Xed out the window
@@ -107,12 +127,6 @@ void CGame_engine::handle_events()
 				{
 				case SDLK_q:
 					g_game_running = false;
-					break;
-				case SDLK_LEFT:
-					m_game_data.knight->move_left();
-					break;
-				case SDLK_RIGHT:
-					m_game_data.knight->move_right();
 					break;
 				default:
 					break;

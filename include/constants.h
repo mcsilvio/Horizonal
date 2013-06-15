@@ -11,6 +11,14 @@
 namespace constants
 {
 
+extern const int KNIGHT_SPRITE_WIDTH;
+extern const int KNIGHT_SPRITE_HEIGHT;
+extern const int SHEET_HEIGHT;
+
+extern const int SPRITE_MARGIN_TOP;
+
+extern const int MOVEMENT_SPEED;
+
 extern const int TILE_WIDTH;
 extern const int TILE_HEIGHT;
 extern const int LEVEL_LENGTH;

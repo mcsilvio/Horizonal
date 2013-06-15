@@ -34,7 +34,7 @@ void CLevel::render(SDL_Surface * screen)
 	for (i = 0; i < LEVEL_LENGTH; i++)
 	{
 		//printf("!!!%d!!!\n", SCREEN_WIDTH);
-		apply_surface(TILE_WIDTH * i, 0, this->m_skin, screen);
+		apply_surface(TILE_WIDTH * i, 0, this->m_skin, screen, NULL);
 	}
 }
 
